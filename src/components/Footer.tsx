@@ -9,7 +9,7 @@ const Footer =() =>{
               {/* title */}
               <div className="text-left "> 
                   <h1 className="text-xl font-bold font-mono text-pink-500">&quot;Glow Up with Confidence ✨&quot;</h1>
-                  <p className="text-md text-pink-600 font-mono  ">&quot;Beauty begins the moment you decide to be yourself. Enhance it with the perfect touch. 💄💖&quot;</p>
+                  <p className="text-md text-black font-mono  ">&quot;Beauty begins the moment you decide to be yourself. Enhance it with the perfect touch. 💄💖&quot;</p>
               </div>
               <br />
               {/* links to social media */}

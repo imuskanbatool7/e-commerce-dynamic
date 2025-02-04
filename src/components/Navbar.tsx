@@ -15,20 +15,30 @@ const Navbar =() => {
       </div>
 
 
+      <div className=" md:hidden flex items-center">
+          <button className="md:hidden  text-pink-500 text-3xl" onClick={()=>setIsOpen(!isOpen)}>
+          {isOpen ? "✖" : "☰"}
+          </button>
+        </div>  
+
+        
+
       <div className={`md:flex justify-center p-5 font-serif space-x-5 
         ${isOpen ? "block" : "hidden"} md:block`}>
-       <ul className="flex justify-center p-10 pb-0 font-serif text-2xl">
-           
+       <ul className="flex justify-center p-10 pb-0 font-serif text-2xl space-x-10">
+           <li>
             <Link className="text-black hover:text-pink-500" href="/">Home</Link>
-             
+             </li>
+             <li>
              <Link className="text-black hover:text-pink-500" href="/about">About</Link>
-            
+           </li>
+            <li>
              <Link className="text-black hover:text-pink-500" href="/contact">Contact</Link>
-
+             </li>
        </ul>
       
-       <div className="  md:hidden flex items-center">
-          <button className="md:hidden lg:hidden text-pink-500 text-3xl" onClick={()=>setIsOpen(!isOpen)}>
+       <div className=" md:hidden flex items-center">
+          <button className="md:hidden  text-pink-500 text-3xl" onClick={()=>setIsOpen(!isOpen)}>
           {isOpen ? "✖" : "☰"}
           </button>
         </div>
