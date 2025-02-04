@@ -4,10 +4,9 @@ const nextConfig = {
       remotePatterns: [
         {
           protocol: 'https',
-          hostname: 'example.com',  // Change this to your image domain
-          pathname: '/images/**',    // You can define the specific path if needed
+          hostname: 'd3t32hsnjxo7q6.cloudfront.net',  // Use the actual hostname for your images
+          pathname: '/i/**',    // Adjust the path pattern if needed
         },
-        // Add more patterns if necessary
       ],
     },
   };

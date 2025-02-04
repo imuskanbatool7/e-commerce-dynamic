@@ -1,9 +1,8 @@
 "use client";
-import { useState, useEffect } from "react";
+
+import { useState, useEffect} from "react";
 import Image from "next/image";
 import CommentSec from "@/components/Comment";
-
-
 
 interface Product {
   id: number;
@@ -25,13 +24,15 @@ export default function EcommerceSite() {
       try {
         const response = await fetch("https://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline");
         const data = await response.json();
+        
         const formattedData: Product[] = data.map((item: any) => ({
           id: item.id,
-          name: item.title || "Unknown Product", // ✅ Ensuring name is always set
+          name: item.title || "Unknown Product", // Ensuring name is always set
           price: parseFloat(item.price) || 0, 
           description: item.description || "No description available",
-          image_link: item.image_link || "/images/ecommerce.jpg", 
+          image_link: item.image_link || "/images/ecommerce.jpg", // Providing a fallback image
         }));
+        
         setProducts(formattedData);
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -72,7 +73,7 @@ export default function EcommerceSite() {
           <div className="bg-white p-6 mt-6 rounded-lg shadow-lg border border-pink-200">
             <Image
               src={selectedProduct.image_link}
-              alt={selectedProduct.name || "Product image"} // ✅ Added fallback alt text
+              alt={selectedProduct.name || "Product image"}
               width={500}
               height={256}
               className="w-full h-64 object-cover rounded-lg mb-4"
@@ -105,12 +106,11 @@ export default function EcommerceSite() {
               >
                 <Image
                   src={product.image_link}
-                  alt={product.name || "Product image"} // ✅ Ensuring alt is never empty
+                  alt={product.name || "Product image"} // Ensuring alt is never empty
                   width={500}
                   height={192}
                   className="w-full h-auto object-cover rounded-lg mb-4"
                 />
-
                 <h3 className="text-xl text-black font-semibold">{product.name}</h3>
                 <p className="mt-2 text-lg font-bold text-black">${product.price.toFixed(2)}</p>
                 <div className="mt-4 flex justify-between space-x-4">
@@ -131,7 +131,7 @@ export default function EcommerceSite() {
             ))}
           </div>
         )}
-     
+
       </div>
       <CommentSec/>
     </div>
