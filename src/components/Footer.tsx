@@ -14,7 +14,7 @@ const Footer =() =>{
               <br />
               {/* links to social media */}
               <div className="flex justify-end space-x-4 ">
-                <a href="https:www.linkedin.com/in/muskan-batool-15584b277"
+                <a href="https://www.linkedin.com/in/muskan-batool-15584b277"
                 target="_blank"
                 rel="noopener noreferrer">
                    <FaLinkedin size={24}  className="hover:bg-blue-600"/>
